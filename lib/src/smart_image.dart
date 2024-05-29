@@ -20,8 +20,7 @@ class SmartImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return networkImage()
-        ? FadeInImage.memoryNetwork(
+    return  FadeInImage.memoryNetwork(
             placeholder: kTransparentImage,
             image: src,
             fit: fit,
@@ -41,18 +40,7 @@ class SmartImage extends StatelessWidget {
               );
             },
           )
-        : isPost
-            ? Image.file(
-                File(src),
-                fit: fit,
-              )
-            : CircleAvatar(
-                radius: radius,
-                backgroundImage: MemoryImage(
-                  imageDecoder(src),
-                  //fit: fit,
-                ),
-              );
+     ;
   }
 
   Uint8List imageDecoder(String image) {
